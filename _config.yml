@@ -1,0 +1,20 @@
+# This file is *NOT* reloaded automatically when you use 'jekyll serve'.
+# If you change this file, you will have to restart the server process.
+
+title: Jekyll Template
+baseurl: ""
+url: https://jekylltemplate.example
+
+defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
+  -
+    scope:
+      path: "" # means "all files"
+    values:
+      layout: default
+
+include: ['_pages']
+
+exclude:
+  - README.md
+  - .circleci
+  - vendor
