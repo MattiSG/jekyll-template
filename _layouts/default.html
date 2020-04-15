@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+
+    <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index">{{ site.title }}</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

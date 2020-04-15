@@ -4,6 +4,7 @@
 title: Jekyll Template
 baseurl: ""
 url: https://jekylltemplate.example
+lang: en  # set the language of your website here with its ISO code in order to expose it in the HTML and improve indexation and automated translation
 
 defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
   -
