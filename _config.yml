@@ -12,7 +12,7 @@ defaults:  # rather than repeating config in all YAML front matters, use default
     values:
       layout: default
 
-include: ['_pages']
+include: ['_pages']  # avoid mixing content files with config & dev files: all files under `_pages` get their URL set with `permalink`
 
 exclude:
   - README.md

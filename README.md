@@ -1,3 +1,7 @@
+# Jekyll template
+
+Jekyll is a static website generator. It is flexible and easy to use, and one of its best benefits is that you can use CD tools provided by code hosting platforms such as GitHub Pages or GitLab Pages to make the built website available on the internet, at no cost.
+
 
 ## Install Ruby with `rbenv`
 
