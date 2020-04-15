@@ -47,3 +47,10 @@ bundle exec jekyll serve --incremental
 - Create a repository on GitHub.
 - Push your content to it.
 - Activate GitHub Pages in the settings.
+
+
+## Set up Continuous Integration
+
+We'll use [CircleCI](https://circleci.com). They offer a free plan for open-source.
+Just log in with GitHub and activate builds for your repository.
+
