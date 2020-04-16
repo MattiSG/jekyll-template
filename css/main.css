@@ -30,12 +30,12 @@ nav, main {
 }
 
 header {
-  text-align: right;
   background-color: white;
   padding: .5em;
 }
 
 header nav ul {
+  text-align: right;
   list-style: none;
 }
 
@@ -43,7 +43,7 @@ header nav li {
   display: inline;
 }
 
-nav a {
+nav ul a, nav ul a:visited {
   text-decoration: none;
   color: inherit;
   background-color: #EEE;
@@ -52,7 +52,18 @@ nav a {
   margin-left: 1em;
 }
 
-nav a:hover, nav a:focus {
+header ul li:first-child a  {
+  float: left;
+  background-color: transparent;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  padding-left: 4em;
+  margin-top: -.5em;
+}
+
+nav a:hover, nav a:focus, header ul li:first-child a:hover, header ul li:first-child a:focus {
   background-color: #DDD;
 }
 

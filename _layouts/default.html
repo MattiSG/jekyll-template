@@ -13,7 +13,9 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index">{{ site.title }}</a></li>
+          {% for page in site.toplevel %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endfor %}
         </ul>
       </nav>
     </header>

@@ -54,6 +54,8 @@ bundle exec jekyll doctor
 
 Edit the `_config.yml` to ensure the metadata matches your setup.
 
+Replace `logo.png` with your own.
+
 You can edit locally with the following options:
 
 ```
@@ -63,6 +65,11 @@ bundle exec jekyll serve --incremental --watch --safe --strict_front_matter
 - `incremental` and `watch` improve your developer experience.
 - `safe` mirrors GitHub Pages' setup.
 - `strict_front_matter` allows to catch errors early.
+
+### Change the menu
+
+In order to avoid mixing content files with config & dev files, pages are never created at the root: they all get written in collections. In order to add a page to the menu, you can simply add it to `_toplevel`, as long as you set its URL with `permalink`. Prefix their filename with the index at which you'd like them to appear in the menu. The first one (by convention, index `0`) will appear on the left handside of the menu, along with your website logo.
+
 
 ## Publish to GitHub Pages
 

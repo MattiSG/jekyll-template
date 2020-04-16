@@ -9,14 +9,20 @@ description: A template for websites rather than blogs.
 lang: en  # set the language of your website with its ISO code in order to improve indexation and automated translation
 # twitter: MattiSG  # associate a Twitter username with this website
 
+collections:
+  toplevel:
+    output: true
 defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
   -
     scope:
       path: "" # means "all files"
     values:
       layout: default
-
-include: ['_pages']  # avoid mixing content files with config & dev files: all files under `_pages` get their URL set with `permalink`
+  -
+    scope:
+      path: toplevel # targets a collection
+    values:
+      layout: default
 
 exclude:
   - .circleci
