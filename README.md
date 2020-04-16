@@ -10,11 +10,13 @@ This template aims at making it easier to use Jekyll to:
 - **Publish websites** or at least landing pages, not blogs.
 - **Get contributions from non-technical users**, purely with online code editors.
 - **Build upon convention** rather than configuration.
+- **Display page metadata**.
 
 In order to achieve these goals, it provides:
 
 1. Version lockdown of the entire stack, with guaranteed synchronisation with GitHub Pages production versions.
 2. Pre-configured CI.
+3. Auto-filled [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) (content preview on major social media).
 
 
 ## Install Ruby with `rbenv`

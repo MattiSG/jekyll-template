@@ -2,9 +2,12 @@
 # If you change this file, you will have to restart the server process.
 
 title: Jekyll Template
-baseurl: ""
-url: https://jekylltemplate.example
-lang: en  # set the language of your website here with its ISO code in order to expose it in the HTML and improve indexation and automated translation
+baseurl: ""  # no trailing slash; should be the name of the repo is serving on GitHub Pages
+url: https://jekylltemplate.example  # no trailing slash
+repository: MattiSG/jekyll-template
+description: A template for websites rather than blogs.
+lang: en  # set the language of your website with its ISO code in order to improve indexation and automated translation
+# twitter: MattiSG  # associate a Twitter username with this website
 
 defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
   -
