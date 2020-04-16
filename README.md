@@ -1,6 +1,6 @@
 # Jekyll template
 
-Jekyll is a static website generator. It is flexible and easy to use, and one of its best benefits is that you can use CD tools provided by code hosting platforms such as GitHub Pages or GitLab Pages to make the built website available on the internet, at no cost.
+[Jekyll](https://jekyllrb.com/) is a static website generator. It is flexible and easy to use, and one of its best benefits is that you can use CD tools provided by code hosting platforms such as GitHub Pages or GitLab Pages to make the built website available on the internet, at no cost.
 
 
 ## Features / Choices
@@ -90,3 +90,8 @@ Just log in with GitHub and activate builds for your repository.
 
 - [Syntax reference](https://www.markdownguide.org/basic-syntax).
 - [Tutoriel en français](https://openclassrooms.com/fr/courses/1304236-redigez-en-markdown).
+
+
+# License
+
+[MIT](https://choosealicense.com/licenses/mit/): do whatever you want as long as you don’t sue me.
