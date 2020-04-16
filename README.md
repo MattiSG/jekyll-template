@@ -19,23 +19,25 @@ In order to achieve these goals, it provides:
 3. Auto-filled [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) (content preview on major social media).
 
 
-## Install Ruby with `rbenv`
+## Get started
+
+### Install Ruby with `rbenv`
 
 We'll use `rbenv` to make sure that the Ruby version is the same across all environments.
 
-### Install rbenv
+#### Install rbenv
 
 For that, we'll start by [installing rbenv](https://github.com/rbenv/rbenv#installation). Make sure you read all the instructions and go through the `rbenv init` stage, otherwise it will not work!
 
 > The alternative to rbenv is RVM. If you have it already installed on your system, or you prefer to use it for any reason, there is no need to switch to rbenv.
 
-### Specify the Ruby version
+#### Specify the Ruby version
 
 Since we want to make sure that we use the same version of all dependencies and runtimes across all environments, and the only one we can't control is the one chosen by GitHub, we'll align all environments with that one. Thus, we'll get the Ruby version we want to use from their published [versions file](https://pages.github.com/versions.json).
 
 The [`.ruby-version` file](https://github.com/rbenv/rbenv#choosing-the-ruby-version) should contain the… version of Ruby we want to use. In our case, that version is given in the `ruby` key of GitHub’s [versions file](https://pages.github.com/versions.json).
 
-## Install Jekyll
+### Install Jekyll
 
 We could install Jekyll with `gem`. However, we wouldn't know if later on GitHub updates their versions, and that could yield a conflict later on.
 
@@ -50,7 +52,7 @@ We can then test that everything went well with:
 bundle exec jekyll doctor
 ```
 
-## Set up your website
+### Set up your website
 
 Edit the `_config.yml` to ensure the metadata matches your setup.
 
@@ -66,7 +68,7 @@ bundle exec jekyll serve --incremental --watch --safe --strict_front_matter
 - `safe` mirrors GitHub Pages' setup.
 - `strict_front_matter` allows to catch errors early.
 
-### Change the menu
+#### Change the menu
 
 In order to avoid mixing content files with config & dev files, pages are never created at the root: they all get written in collections. In order to add a page to the menu, you can simply add it to `_toplevel`, as long as you set its URL with `permalink`. Prefix their filename with the index at which you'd like them to appear in the menu. The first one (by convention, index `0`) will appear on the left handside of the menu, along with your website logo.
 
