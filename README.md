@@ -3,6 +3,20 @@
 Jekyll is a static website generator. It is flexible and easy to use, and one of its best benefits is that you can use CD tools provided by code hosting platforms such as GitHub Pages or GitLab Pages to make the built website available on the internet, at no cost.
 
 
+## Features / Choices
+
+This template aims at making it easier to use Jekyll to:
+
+- **Publish websites** or at least landing pages, not blogs.
+- **Get contributions from non-technical users**, purely with online code editors.
+- **Build upon convention** rather than configuration.
+
+In order to achieve these goals, it provides:
+
+1. Version lockdown of the entire stack, with guaranteed synchronisation with GitHub Pages production versions.
+2. Pre-configured CI.
+
+
 ## Install Ruby with `rbenv`
 
 We'll use `rbenv` to make sure that the Ruby version is the same across all environments.
