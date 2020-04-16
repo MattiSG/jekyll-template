@@ -36,8 +36,8 @@ jobs:
           command: bundle exec jekyll doctor
 
       - run:
-          name: Compile website
-          command: bundle exec jekyll build --safe
+          name: Compile website with GitHub Pages options
+          command: bundle exec jekyll build --safe --strict_front_matter
 
       - run:
           name: Check homepage was compiled

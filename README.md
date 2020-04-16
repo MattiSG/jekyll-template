@@ -52,11 +52,17 @@ bundle exec jekyll doctor
 
 ## Set up your website
 
-Edit the `_config.yml` to set some description elements.
+Edit the `_config.yml` to ensure the metadata matches your setup.
+
+You can edit locally with the following options:
 
 ```
-bundle exec jekyll serve --incremental
+bundle exec jekyll serve --incremental --watch --safe --strict_front_matter
 ```
+
+- `incremental` and `watch` improve your developer experience.
+- `safe` mirrors GitHub Pages' setup.
+- `strict_front_matter` allows to catch errors early.
 
 ## Publish to GitHub Pages
 
