@@ -7,8 +7,8 @@
 <meta content="{{ description }}" name="description">
 <meta content="{{ description }}" property="og:description">
 
-<meta content="{{ site.url }}/{{ page.image | default: 'images/logo.png' }}" name="thumbnail" />
-<meta content="{{ site.url }}/{{ page.image  | default: 'images/logo.png' }}" property="og:image" />
+<meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image | default: 'logo.png' }}" name="thumbnail" />
+<meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image  | default: 'logo.png' }}" property="og:image" />
 
 {% capture canonical_url %}{{ site.url }}{{ page.url | replace:'index.html','' }}{% endcapture %}
 <link href="{{ canonical_url }}" rel="canonical">
