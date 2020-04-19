@@ -111,6 +111,17 @@ This is why this template supports three ways to ease category-by-category styli
 Since your files are stored in Git, and they will be exposed directly, it is a very good idea for the performance of both your public website and production workflow to compress assets _before_ they are committed to the repository. In particular, I strongly recommend using [ImageOptim](https://imageoptim.com/) or an equivalent service to compress images before committing them.
 
 
+### Provide magic links to non-technical contributors
+
+Creating a new file is significantly harder than editing existing ones in the online editor interface. In order to make it easier for non-technical users to create new content, we can create special links that embed a template file, by using query string variables.
+
+For example, the GitHub online editor will use `filename` and `value` as URL-encoded values for the file name and file content, so we can craft URLs that will pre-fill a new file, complete with YAML front-matter:
+
+```
+https://github.com/$username/${repo_name}/new/${branch}/${containing_folder_path}?filename=${new_file_name_with_extension}&value=${url_encoded_template}
+```
+
+
 ## Get started
 
 ### Install Ruby with `rbenv`
