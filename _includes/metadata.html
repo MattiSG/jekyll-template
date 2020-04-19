@@ -10,7 +10,7 @@
 <meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image | default: 'logo.png' }}" name="thumbnail" />
 <meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image  | default: 'logo.png' }}" property="og:image" />
 
-{% capture canonical_url %}{{ site.url }}{{ page.url | replace:'index.html','' }}{% endcapture %}
+{% capture canonical_url %}{{ site.url }}/{{ site.baseurl }}/{{ page.url | replace:'index.html','' }}{% endcapture %}
 <link href="{{ canonical_url }}" rel="canonical">
 <meta content="{{ canonical_url }}" property="og:url">
 
