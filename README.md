@@ -52,7 +52,9 @@ However, when relying on hosting providers such as GitHub Pages, we cannot force
 
 This is why the `Gemfile` in this repository is dynamic. It relies on GitHub [exposing their production versions](https://pages.github.com/versions.json) in JSON, and parses them (including the Ruby runtime version) on update. A fallback mechanism supports offline work and assumes local versions are correct —you won’t be pushing work if you’re offline anyway 🙂
 
-_[Credit](https://github.com/betagouv/beta.gouv.fr/commits/master/Gemfile) goes to @MaukoQuiroga for the parsing code._
+The Ruby version itself is locked with the `.ruby-version` file, and `bundler` will complain if it does not match the production version.
+
+_[Credit](https://github.com/betagouv/beta.gouv.fr/commits/master/Gemfile) goes to @MaukoQuiroga for most of the dynamic Gemfile code._
 
 #### CI
 
