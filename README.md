@@ -1,6 +1,32 @@
-# Jekyll template
+# Jekyll landing page & website industrial template
 
-[Jekyll](https://jekyllrb.com/) is a static website generator. It is flexible and easy to use, and one of its best benefits is that you can use CD tools provided by code hosting platforms such as GitHub Pages or GitLab Pages to make the built website available on the internet, at no cost.
+## Context
+
+[Jekyll](https://jekyllrb.com/) is a static website generator.
+
+> This means it transforms pieces of content in Markdown or HTML into full HTML files that can be displayed in web browsers.
+
+It is flexible and easy to use. Other static website generators exist. However, one of the main benefits of Jekyll is that it can be run and hosted for free directly by code hosting platforms such as [GitHub](https://pages.github.com) or [GitLab](https://docs.gitlab.com/ee/user/project/pages/) through their Pages feature, and you can always switch to your own server at any time.
+
+> This means your website can be made available on the internet at no cost.
+
+Jekyll claims to be “blog-aware”. It is indeed, supporting notions such as posts, publishing dates and authors out of the box. More than “aware”, though, the default boilerplate and some of the documentation will guide you towards blog posts.
+
+Jekyll can do much more than that and, over the years, I have come to build and reuse a set of practices and presets that support my main use case: building and deploying landing pages cheap and fast (under half a day) that enable non-technical users to contribute content through online text editors, and maintain an ability to scale to an entire website with full quality control.
+
+## Intention
+
+**I aim for the sweet spot where efficient contribution is possible both for developers and non-technical users**.
+
+The developer experience is indeed most of the time terrible with CMSs that ship WYSIWYG editors, and learning HTML and managing metadata is too much for the vast majority of non-technical users.
+
+This approach has enabled me to build products such as:
+
+- [beta.gouv.fr](https://beta.gouv.fr), the website of the French government public digital services incubator, which uses Jekyll both as CMS and HR system and has [over 370 contributors](https://github.com/betagouv/beta.gouv.fr/) of all sorts.
+- [disinfo.quaidorsay.fr](https://disinfo.quaidorsay.fr), a resource supporting actors countering information manipulation (aka “fake news”), which uses Jekyll for a [multilingual](https://github.com/ambanum/disinfo.quaidorsay.fr/tree/master/_pages), [collaborative encyclopedia](https://github.com/ambanum/disinfo.quaidorsay.fr/tree/master/_pages/en/encyclopedia) of tools and practices.
+- [pariscall.international](https://pariscall.international), the public website for the Paris Call for Trust and Security in Cyberspace, which uses Jekyll to maintain a [list of signatories](https://github.com/ambanum/pariscall.international/tree/master/_supporters) and relies on an additional [backend](https://github.com/ambanum/pariscall.international-backend) to [create files](https://github.com/ambanum/pariscall.international/commits?author=AmbNum-Bot) from survey answers, making it easy for anyone to add files and for non-technical maintainers to update the data over time.
+
+This repository regroups the setup and best practices I have identified. While reusable as such, it is perhaps better to think of it as a library than as a template.
 
 
 ## Features / Choices
