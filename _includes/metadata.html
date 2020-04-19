@@ -14,9 +14,9 @@
 <link href="{{ canonical_url }}" rel="canonical">
 <meta content="{{ canonical_url }}" property="og:url">
 
-{% unless site.twitter == nil %}
-<meta content="@{{ site.twitter }}" name="twitter:site">
-<meta content="@{{ site.twitter }}" name="twitter:creator">
+{% unless site.twitter_username == nil %}
+<meta content="@{{ site.twitter_username }}" name="twitter:site">
+<meta content="@{{ site.twitter_username }}" name="twitter:creator">
 {% endunless %}
 
 <meta content="{{ site.title }}" property="og:site_name" />
