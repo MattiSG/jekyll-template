@@ -7,8 +7,9 @@
 <meta content="{{ description }}" name="description">
 <meta content="{{ description }}" property="og:description">
 
-<meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image | default: 'logo.png' }}" name="thumbnail" />
-<meta content="{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image  | default: 'logo.png' }}" property="og:image" />
+{% capture image_url %}{{ site.url }}/{{ site.baseurl }}/assets/images/{{ page.image | default: 'logo.png' }}{% endcapture %} {% comment %} The URL needs to be absolute even if it is on the same domain, otherwise LinkedIn won't fetch it. {% endcomment %}
+<meta content="{{ image_url }}" name="thumbnail" />
+<meta content="{{ image_url }}" property="og:image" />
 
 {% capture canonical_url %}{{ site.url }}/{{ site.baseurl }}/{{ page.url | replace:'index.html','' }}{% endcapture %}
 <link href="{{ canonical_url }}" rel="canonical">
