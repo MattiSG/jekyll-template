@@ -2,8 +2,8 @@
 # If you change this file, you will have to restart the server process.
 
 title: Jekyll Template
-baseurl: "/jekyll-template"  # with leading slash, without trailing slash; should be the name of the repo is serving on GitHub Pages; use the empty string (""), not a slash, if you host on a custom domain
-url: https://mattisg.github.io  # no trailing slash
+baseurl: "/jekyll-template"  # with leading slash, without trailing slash; should be the name of the repo if serving on GitHub Pages; use the empty string (""), not a slash, if you host on root; see https://github.com/github/pages-gem/issues/350
+url: https://mattisg.github.io  # no trailing slash, see https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/
 repository: MattiSG/jekyll-template
 description: A template for websites rather than blogs.
 lang: en  # set the language of your website with its ISO code in order to improve indexation and automated translation
