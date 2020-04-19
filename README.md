@@ -179,12 +179,14 @@ Replace `logo.png` with your own.
 You can edit locally with the following options:
 
 ```
-bundle exec jekyll serve --incremental --watch --safe --strict_front_matter
+bundle exec jekyll serve --watch --safe --strict_front_matter
 ```
 
-- `incremental` and `watch` improve your developer experience.
+- `watch` improves your developer experience: the server will reload automatically when it detects changes to files (except the config file, you’ll get bitten by that at some point).
 - `safe` mirrors GitHub Pages' setup.
 - `strict_front_matter` allows to catch errors early.
+
+> While the server will systematically suggest you start it with the `--incremental` option, I recommend to only use this option as an opt-in, when you are iterating quickly over a specific set of pages in a large website. When designing, this is a recipe for getting inconsistent pages where some have updated their links and included assets and others have not, leading to lots of frustration.
 
 #### Change the menu
 
