@@ -113,12 +113,27 @@ Since your files are stored in Git, and they will be exposed directly, it is a v
 
 ### Provide magic links to non-technical contributors
 
+#### To create new files
+
 Creating a new file is significantly harder than editing existing ones in the online editor interface. In order to make it easier for non-technical users to create new content, we can create special links that embed a template file, by using query string variables.
 
 For example, the GitHub online editor will use `filename` and `value` as URL-encoded values for the file name and file content, so we can craft URLs that will pre-fill a new file, complete with YAML front-matter:
 
 ```
 https://github.com/$username/${repo_name}/new/${branch}/${containing_folder_path}?filename=${new_file_name_with_extension}&value=${url_encoded_template}
+```
+
+I usually store these links in the `CONTRIBUTING` file.
+
+
+#### Add direct edit links on each page
+
+This will ease the contribution of both non-technical users, who can navigate the published website rather than the file hierarchy, and of external contributors.
+
+There, the link is much easier to craft by relying on Jekyll-provided variables:
+
+```
+https://github.com/{{ site.repository }}/edit/${target_branch}/{{ page.path }}
 ```
 
 
