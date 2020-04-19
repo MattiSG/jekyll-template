@@ -12,6 +12,10 @@ body {
   height: 100%;
 }
 
+main {
+  min-height: 80%;
+}
+
 h1, h2, h3, h4, h5, h6, th { font-weight: normal; }
 
 /* Minor third */
@@ -48,7 +52,6 @@ footer {
   text-align: center;
   margin-top: 5em;
   bottom: 0;
-  position: absolute;
   width: 100%;
 }
 
