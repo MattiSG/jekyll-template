@@ -1,5 +1,5 @@
 ---
-title: ✅
+title: Home
 permalink: /
 additional_css: homepage.css
 ---
