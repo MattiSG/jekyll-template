@@ -89,6 +89,13 @@ This is why this template suggests to only store content in [collections](https:
 The only folder that is exposed directly is `assets`, in which files that should be processed as a pass-through are to be stored.
 
 
+## Tips
+
+### Compress assets
+
+Since your files are stored in Git, and they will be exposed directly, it is a very good idea for the performance of both your public website and production workflow to compress assets _before_ they are committed to the repository. In particular, I strongly recommend using [ImageOptim](https://imageoptim.com/) or an equivalent service to compress images before committing them.
+
+
 ## Get started
 
 ### Install Ruby with `rbenv`
