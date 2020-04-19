@@ -3,7 +3,7 @@
 <title>{{ title }}</title>
 <meta property="og:title" content="{{ title }}">
 
-{% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+{% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncatewords: 27 | escape %} {% comment %} With an average of around 6 letters per word, that should be under 180 characters {% endcomment %}
 <meta content="{{ description }}" name="description">
 <meta content="{{ description }}" property="og:description">
 
