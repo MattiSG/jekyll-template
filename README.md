@@ -77,6 +77,18 @@ Some of the lesser-known yet very powerful features of Jekyll are [collections](
 This is why this template showcases and prefills the `_includes` folder and defines a collection in `_config.yml` with both an explicit output and default values that demonstrate the power of collections.
 
 
+### Systematic use of collections
+
+Jekyll is most often used in a way where the information architecture (i.e. content hierarchy) reflects the folder hierarchy of content files. While a definitely easier way to get started, this has two major drawbacks:
+
+1. Mixing of content hierarchy and dev setup: at the root of your repository lie both the root page and paths that will be exposed on your website and all the weird dev files such as `Gemfile`. This makes it very confusing for non-technical users.
+2. Underuse of the powerful metadata management and styling features that can be derived from assigning each piece of content to a category.
+
+This is why this template suggests to only store content in [collections](https://jekyllrb.com/docs/step-by-step/09-collections/). This will help you think about content hierarchy, make sure all your content is in scoped folders, enable the use of default values for layout and metadata for each folder, and let you teach non-technical contributors that they can change anything they want as long as they work in some given folder (which they can, for example, bookmark in their browser).
+
+The only folder that is exposed directly is `assets`, in which files that should be processed as a pass-through are to be stored.
+
+
 ## Get started
 
 ### Install Ruby with `rbenv`

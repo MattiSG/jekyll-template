@@ -16,12 +16,12 @@ collections:
 defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
   -
     scope:
-      path: "" # means "all files"
+      path: ""  # means "all files"
     values:
       layout: default
   -
     scope:
-      path: toplevel # targets a collection
+      path: toplevel  # despite the property name, this is the name of a collection, not a folder path, so there is no leading underscore
     values:
       layout: default
 
