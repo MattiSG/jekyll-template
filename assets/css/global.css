@@ -1,0 +1,51 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #F9F9F9;
+  color: #0D2030;
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, th { font-weight: normal; }
+
+/* Minor third */
+h1 { font-size: 2.488em; }
+h2 { font-size: 2.074em; }
+h3 { font-size: 1.728em; }
+h4 { font-size: 1.44em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+small { font-size: 0.833em; }
+
+ul, ol, li {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul {
+  list-style: disc outside none;
+}
+
+blockquote {
+  border-left: solid .2em #333;
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+footer {
+  line-height: 1.2;
+  font-size: 80%;
+  background: #DDD;
+  color: #303030;
+  padding: 1em;
+  text-align: right;
+  margin-top: 5em;
+}
+
+footer a {
+  color: inherit;
+}

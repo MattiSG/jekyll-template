@@ -2,14 +2,16 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   <head>
     <meta charset="utf-8">
-    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" type="text/css" media="all">
-    {% include metadata.html %}
+    <link href="{{ site.baseurl }}/assets/css/global.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ site.baseurl }}/assets/css/{{ page.layout }}.css" rel="stylesheet" type="text/css" media="all">
 
     {% for file in page.additional_css %}
       <link rel="stylesheet" type="text/css" href="{% if file contains '://' %}{{ file }}{% else %}/assets/css/{{ file }}{% endif %}">
     {% endfor %}
+
+    {% include metadata.html %}
   </head>
-  <body>
+  <body {% unless page.layout == 'default' %}class="layout-{{ page.layout }}"{% endunless %}>
     <header>
       <nav>
         <ul>

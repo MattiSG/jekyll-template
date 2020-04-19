@@ -1,0 +1,58 @@
+/* This file is automatically loaded for all pages with `default` layout, simply because their names match. */
+
+nav,
+main {
+  max-width: 60em;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1em;
+}
+
+main img {
+  max-width: 50%;
+  display: block;
+  margin: auto;
+}
+
+header {
+  background-color: white;
+  padding: .5em;
+}
+
+header nav ul {
+  text-align: right;
+  list-style: none;
+}
+
+header nav li {
+  display: inline;
+}
+
+header li:first-child a  {
+  float: left;
+  background-color: transparent;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  padding-left: 4em;
+  margin-top: -.5em;
+}
+
+nav a,
+nav a:visited {
+  text-decoration: none;
+  color: inherit;
+  background-color: #EEE;
+  border-radius: .2em;
+  padding: .5em;
+  margin-left: 1em;
+}
+
+nav a:hover,
+nav a:focus,
+header li:first-child a:hover,
+header li:first-child a:focus {
+  background-color: #DDD;
+}

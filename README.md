@@ -89,6 +89,21 @@ This is why this template suggests to only store content in [collections](https:
 The only folder that is exposed directly is `assets`, in which files that should be processed as a pass-through are to be stored.
 
 
+### Styling
+
+Jekyll does support [themes](http://jekyllthemes.org), so it is tempting to think you can create content and later on make it beautiful. While this can work for well-known forms of content such as blog posts, this is usually not a satisfying approach when you are building custom websites.
+
+If you manage your own styles with Jekyll, you will manipulate layouts and CSS. Since the content is static, rather than including stylesheets on a page-by-page basis, many websites end up including all their stylesheets on all pages (or creating a single one with Sass), decreasing web performance.
+
+This is why this template supports three ways to ease category-by-category styling:
+
+1. For minor adjustments, a CSS class name is added on the `body` of each page with the name of the current layout as soon as it is not `default`. For example, if you define `layout: tree` on a page, then its body will have class `.layout-tree` so that you can easily target elements within.
+2. For major variations, a stylesheet is automatically loaded for each layout. For example, if you set `layout: tree` on a page, then it will load the stylesheet at `assets/css/tree.css`. If you don’t need this feature, the best is to simply remove the corresponding lines in the default layout.
+3. The `additional_css` front-matter property loads all stylesheets listed there, so that any page or collection can load arbitrary files.
+
+> I personally prefer to use standard CSS over Sass, but that choice is obviously up to you and Jekyll does [support Sass / SCSS as preprocessors](https://jekyllrb.com/docs/assets/#sassscss).
+
+
 ## Tips
 
 ### Compress assets
