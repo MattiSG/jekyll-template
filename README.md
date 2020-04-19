@@ -1,6 +1,8 @@
 # Jekyll landing page & website industrial template
 
-## Context
+## Introduction
+
+### Context
 
 [Jekyll](https://jekyllrb.com/) is a static website generator.
 
@@ -14,11 +16,22 @@ Jekyll claims to be “blog-aware”. It is indeed, supporting notions such as p
 
 Jekyll can do much more than that and, over the years, I have come to build and reuse a set of practices and presets that support my main use case: building and deploying landing pages cheap and fast (under half a day) that enable non-technical users to contribute content through online text editors, and maintain an ability to scale to an entire website with full quality control.
 
-## Intention
+### Intention
 
 **I aim for the sweet spot where efficient contribution is possible both for developers and non-technical users**.
 
-The developer experience is indeed most of the time terrible with CMSs that ship WYSIWYG editors, and learning HTML and managing metadata is too much for the vast majority of non-technical users.
+> The developer experience is indeed most of the time terrible with CMSs that ship WYSIWYG editors, and learning HTML and managing metadata is too much for the vast majority of non-technical users.
+
+This repository aims at making it easier to use Jekyll to:
+
+- **Publish websites** or at least landing pages, not blogs.
+- **Get contributions from non-technical users**, purely with online code editors.
+- **Build upon convention** rather than configuration.
+- **Display page metadata**.
+
+It regroups the setup and best practices I have identified. While reusable as such, it is perhaps better to think of it as a library than as a template.
+
+### Examples
 
 This approach has enabled me to build products such as:
 
@@ -26,23 +39,33 @@ This approach has enabled me to build products such as:
 - [disinfo.quaidorsay.fr](https://disinfo.quaidorsay.fr), a resource supporting actors countering information manipulation (aka “fake news”), which uses Jekyll for a [multilingual](https://github.com/ambanum/disinfo.quaidorsay.fr/tree/master/_pages), [collaborative encyclopedia](https://github.com/ambanum/disinfo.quaidorsay.fr/tree/master/_pages/en/encyclopedia) of tools and practices.
 - [pariscall.international](https://pariscall.international), the public website for the Paris Call for Trust and Security in Cyberspace, which uses Jekyll to maintain a [list of signatories](https://github.com/ambanum/pariscall.international/tree/master/_supporters) and relies on an additional [backend](https://github.com/ambanum/pariscall.international-backend) to [create files](https://github.com/ambanum/pariscall.international/commits?author=AmbNum-Bot) from survey answers, making it easy for anyone to add files and for non-technical maintainers to update the data over time.
 
-This repository regroups the setup and best practices I have identified. While reusable as such, it is perhaps better to think of it as a library than as a template.
+
+## Features
+
+### Production versions synchronisation
+
+It is a standard practice to ensure that your development and production environments are in sync, in order to ensure bugs can be caught before production, or at least reproduced in development. Most of the time, this is achieved by locking down versions in development so that production updates accordingly.
+
+However, when relying on hosting providers such as GitHub Pages, we cannot force production versions and depend on the host update frequency and dependency choices. In this case, the only way to ensure both environments are in sync is to… enforce production versions in dev!
+
+#### Local
+
+This is why the `Gemfile` in this repository is dynamic. It relies on GitHub [exposing their production versions](https://pages.github.com/versions.json) in JSON, and parses them (including the Ruby runtime version) on update. A fallback mechanism supports offline work and assumes local versions are correct —you won’t be pushing work if you’re offline anyway 🙂
+
+_[Credit](https://github.com/betagouv/beta.gouv.fr/commits/master/Gemfile) goes to @MaukoQuiroga for the parsing code._
+
+#### CI
+
+Continuous integration means testing on every push. The Jekyll documentation provides a [template for CircleCI](https://jekyllrb.com/docs/continuous-integration/circleci/). That template assumes a deployment to Amazon S3 where you control production versions.
+
+This is why the `.circleci/config.yml` in this repository builds using the same versions and options as GitHub Pages does (in particular, “safe mode” which disables most plugins), and enforces additional checks such as HTML spec compliance.
 
 
-## Features / Choices
+### Social cards
 
-This template aims at making it easier to use Jekyll to:
+Most Jekyll themes don’t provide the [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) that will enable rich content preview on major social media.
 
-- **Publish websites** or at least landing pages, not blogs.
-- **Get contributions from non-technical users**, purely with online code editors.
-- **Build upon convention** rather than configuration.
-- **Display page metadata**.
-
-In order to achieve these goals, it provides:
-
-1. Version lockdown of the entire stack, with guaranteed synchronisation with GitHub Pages production versions.
-2. Pre-configured CI.
-3. Auto-filled [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) (content preview on major social media).
+The `_includes/metadata.html` in this repository ships the minimal amount of code to enable rich preview on Facebook, Twitter, LinkedIn and any other [OpenGraph](https://ogp.me)-compatible scraper.
 
 
 ## Get started
