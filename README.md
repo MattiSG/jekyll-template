@@ -70,6 +70,13 @@ Most Jekyll themes don’t provide the [meta tags for “social cards”](https:
 The `_includes/metadata.html` in this repository ships the minimal amount of code to enable rich preview on Facebook, Twitter, LinkedIn and any other [OpenGraph](https://ogp.me)-compatible scraper.
 
 
+### Advanced features discoverability
+
+Some of the lesser-known yet very powerful features of Jekyll are [collections](https://jekyllrb.com/docs/step-by-step/09-collections/) and [includes](https://jekyllrb.com/docs/step-by-step/05-includes/). The default Jekyll template, by staying minimal, does not help with making those discoverable.
+
+This is why this template showcases and prefills the `_includes` folder and defines a collection in `_config.yml` with both an explicit output and default values that demonstrate the power of collections.
+
+
 ## Get started
 
 ### Install Ruby with `rbenv`

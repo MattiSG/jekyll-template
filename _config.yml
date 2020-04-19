@@ -12,6 +12,7 @@ lang: en  # set the language of your website with its ISO code in order to impro
 collections:
   toplevel:
     output: true
+
 defaults:  # rather than repeating config in all YAML front matters, use defaults for each type of content you have in your website
   -
     scope:
