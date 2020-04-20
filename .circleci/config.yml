@@ -45,7 +45,7 @@ jobs:
 
       - run:
           name: Check HTML common mistakes
-          command: bundle exec htmlproofer ./_site --assume-extension --check-html --disable-external --empty-alt-ignore --check-img-http
+          command: bundle exec htmlproofer ./_site --assume-extension --check-html --report_eof_tags --report_invalid_tags --report_mismatched_tags --report_missing_doctype --disable-external --empty-alt-ignore --check-img-http --check_opengraph --check_sri --url-swap '^/jekyll-template:'
 
       - run:
           name: Validate HTML spec compliance
