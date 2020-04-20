@@ -212,6 +212,7 @@ Just log in with GitHub and activate builds for your repository.
 
 - [Syntax reference](https://www.markdownguide.org/basic-syntax).
 - [Tutoriel en français](https://openclassrooms.com/fr/courses/1304236-redigez-en-markdown).
+- [Cheat sheet](https://devhints.io/jekyll).
 
 
 # License
