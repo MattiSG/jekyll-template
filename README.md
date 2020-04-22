@@ -1,6 +1,21 @@
-# Jekyll landing page & website industrial template
+# Jekyll lean startup template
+
+A template for small teams to deploy landing pages and small websites cheap and fast, engage non-technical contributors, and architect information over time.
 
 ## Introduction
+
+### Intention
+
+The developer experience is most of the time terrible with content management systems that ship WYSIWYG editors, and learning HTML and managing metadata is too much for the vast majority of non-technical users. **I aim for the sweet spot where efficient contribution is possible both for developers and non-technical users**.
+
+This repository aims at making it easier to use Jekyll to:
+
+- **Publish websites** or at least landing pages, not blogs.
+- **Get contributions from non-technical users**, purely with online code editors.
+- **Build upon convention** rather than configuration.
+- **Display page metadata**.
+
+It regroups the setup and best practices I have identified. While reusable as such, it is perhaps better to think of it as a library of examples than as a template.
 
 ### Context
 
@@ -16,21 +31,6 @@ Jekyll claims to be “blog-aware”. It is indeed, supporting notions such as p
 
 Jekyll can do much more than that and, over the years, I have come to build and reuse a set of practices and presets that support my main use case: building and deploying landing pages cheap and fast (under half a day) that enable non-technical users to contribute content through online text editors, and maintain an ability to scale to an entire website with full quality control.
 
-### Intention
-
-**I aim for the sweet spot where efficient contribution is possible both for developers and non-technical users**.
-
-> The developer experience is indeed most of the time terrible with CMSs that ship WYSIWYG editors, and learning HTML and managing metadata is too much for the vast majority of non-technical users.
-
-This repository aims at making it easier to use Jekyll to:
-
-- **Publish websites** or at least landing pages, not blogs.
-- **Get contributions from non-technical users**, purely with online code editors.
-- **Build upon convention** rather than configuration.
-- **Display page metadata**.
-
-It regroups the setup and best practices I have identified. While reusable as such, it is perhaps better to think of it as a library than as a template.
-
 ### Examples
 
 This approach has enabled me to build products such as:
@@ -42,32 +42,23 @@ This approach has enabled me to build products such as:
 
 ## Features
 
-### Production versions synchronisation
+### Production & development versions synchronisation
 
-It is a standard practice to ensure that your development and production environments are in sync, in order to ensure bugs can be caught before production, or at least reproduced in development. Most of the time, this is achieved by locking down versions in development so that production updates accordingly.
+It is standard practice to ensure that development and production environments are in sync, in order to ensure bugs can be caught before production, or at least reproduced in development. Most of the time, this is achieved by locking down versions in development so that production updates accordingly.
 
-However, when relying on hosting providers such as GitHub Pages, we cannot force production versions and depend on the host update frequency and dependency choices. In this case, the only way to ensure both environments are in sync is to… enforce production versions in dev!
+However, when relying on hosting providers such as GitHub Pages, the host manages production versions. In this case, the only way to ensure both environments are in sync is to… enforce production versions in dev!
 
-#### Local
+The `Gemfile` in this repository is dynamic and fetches GitHub’s [production versions](https://pages.github.com/versions.json). A fallback mechanism supports offline work and assumes local versions are correct —you won’t be pushing work if you’re offline anyway 🙂
 
-This is why the `Gemfile` in this repository is dynamic. It relies on GitHub [exposing their production versions](https://pages.github.com/versions.json) in JSON, and parses them (including the Ruby runtime version) on update. A fallback mechanism supports offline work and assumes local versions are correct —you won’t be pushing work if you’re offline anyway 🙂
+> [Credit](https://github.com/betagouv/beta.gouv.fr/commits/master/Gemfile) goes to @MaukoQuiroga for most of the dynamic Gemfile code.
 
-The Ruby version itself is locked with the `.ruby-version` file, and `bundler` will complain if it does not match the production version.
+The Ruby version itself is locked with the `.ruby-version` file, and `bundler` will complain if it does not match the production version. I suggest to [install `rbenv`](https://github.com/rbenv/rbenv#installation) to manage and automatically switch the Ruby version.
 
-_[Credit](https://github.com/betagouv/beta.gouv.fr/commits/master/Gemfile) goes to @MaukoQuiroga for most of the dynamic Gemfile code._
+> The alternative to rbenv is RVM. If you have it already installed on your system, or you prefer to use it for any reason, there is no need to switch to rbenv.
 
-#### CI
+In CI, the `.circleci/config.yml` in this repository builds using the same versions and options as GitHub Pages does, such as “safe mode” which disables most plugins, and enforces additional checks such as HTML spec compliance.
 
-Continuous integration means testing on every push. The Jekyll documentation provides a [template for CircleCI](https://jekyllrb.com/docs/continuous-integration/circleci/). That template assumes a deployment to Amazon S3 where you control production versions.
-
-This is why the `.circleci/config.yml` in this repository builds using the same versions and options as GitHub Pages does (in particular, “safe mode” which disables most plugins), and enforces additional checks such as HTML spec compliance.
-
-
-### Social cards
-
-Most Jekyll themes don’t provide the [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) that will enable rich content preview on major social media.
-
-The `_includes/metadata.html` in this repository ships the minimal amount of code to enable rich preview on Facebook, Twitter, LinkedIn and any other [OpenGraph](https://ogp.me)-compatible scraper.
+> The Jekyll documentation provides a [template for CircleCI](https://jekyllrb.com/docs/continuous-integration/circleci/), but it assumes a deployment to Amazon S3 where you control production versions.
 
 
 ### Advanced features discoverability
@@ -77,7 +68,7 @@ Some of the lesser-known yet very powerful features of Jekyll are [collections](
 This is why this template showcases and prefills the `_includes` folder and defines a collection in `_config.yml` with both an explicit output and default values that demonstrate the power of collections.
 
 
-### Systematic use of collections
+### Information architecture through collections
 
 Jekyll is most often used in a way where the information architecture (i.e. content hierarchy) reflects the folder hierarchy of content files. While a definitely easier way to get started, this has two major drawbacks:
 
@@ -102,6 +93,13 @@ This is why this template supports three ways to ease category-by-category styli
 3. The `additional_css` front-matter property loads all stylesheets listed there, so that any page or collection can load arbitrary files.
 
 > I personally prefer to use standard CSS over Sass, but that choice is obviously up to you and Jekyll does [support Sass / SCSS as preprocessors](https://jekyllrb.com/docs/assets/#sassscss).
+
+
+### Social cards
+
+Most Jekyll themes don’t provide the [meta tags for “social cards”](https://gist.github.com/MattiSG/fc7f65ad16fb8968e0f84b756efd9383) that will enable rich content preview on major social media.
+
+The `_includes/metadata.html` in this repository ships the minimal amount of code to enable rich preview on Facebook, Twitter, LinkedIn and any other [OpenGraph](https://ogp.me)-compatible scraper.
 
 
 ## Tips
@@ -136,64 +134,31 @@ There, the link is much easier to craft by relying on Jekyll-provided variables:
 https://github.com/{{ site.repository }}/edit/${target_branch}/{{ page.path }}
 ```
 
+### Use official documentation
 
-## Get started
+- [Jekyll documentation](http://jekyllrb.com/docs/).
+- [Jekyll cheat sheet](https://devhints.io/jekyll).
+- [Liquid language documentation](https://shopify.github.io/liquid/).
 
-### Install Ruby with `rbenv`
 
-We'll use `rbenv` to make sure that the Ruby version is the same across all environments.
+## Adapting this template
 
-#### Install rbenv
+- Edit the `_config.yml` to ensure the metadata matches your setup.
+- Replace `logo.png` with your own.
+- Start the server with the following options: `bundle exec jekyll serve --watch --safe --strict_front_matter`
 
-For that, we'll start by [installing rbenv](https://github.com/rbenv/rbenv#installation). Make sure you read all the instructions and go through the `rbenv init` stage, otherwise it will not work!
-
-> The alternative to rbenv is RVM. If you have it already installed on your system, or you prefer to use it for any reason, there is no need to switch to rbenv.
-
-#### Specify the Ruby version
-
-Since we want to make sure that we use the same version of all dependencies and runtimes across all environments, and the only one we can't control is the one chosen by GitHub, we'll align all environments with that one. Thus, we'll get the Ruby version we want to use from their published [versions file](https://pages.github.com/versions.json).
-
-The [`.ruby-version` file](https://github.com/rbenv/rbenv#choosing-the-ruby-version) should contain the… version of Ruby we want to use. In our case, that version is given in the `ruby` key of GitHub’s [versions file](https://pages.github.com/versions.json).
-
-### Install Jekyll
-
-We could install Jekyll with `gem`. However, we wouldn't know if later on GitHub updates their versions, and that could yield a conflict later on.
-
-```
-gem install bundler --no-ri --no-rdoc
-bundle install
-```
-
-We can then test that everything went well with:
-
-```
-bundle exec jekyll doctor
-```
-
-### Set up your website
-
-Edit the `_config.yml` to ensure the metadata matches your setup.
-
-Replace `logo.png` with your own.
-
-You can edit locally with the following options:
-
-```
-bundle exec jekyll serve --watch --safe --strict_front_matter
-```
-
-- `watch` improves your developer experience: the server will reload automatically when it detects changes to files (except the config file, you’ll get bitten by that at some point).
-- `safe` mirrors GitHub Pages' setup.
-- `strict_front_matter` allows to catch errors early.
-
+> - `watch` improves your developer experience: the server will reload automatically when it detects changes to files (except the config file, you’ll get bitten by that at some point).
+> - `safe` mirrors GitHub Pages' setup.
+> - `strict_front_matter` allows to catch errors early.
+>
 > While the server will systematically suggest you start it with the `--incremental` option, I recommend to only use this option as an opt-in, when you are iterating quickly over a specific set of pages in a large website. When designing, this is a recipe for getting inconsistent pages where some have updated their links and included assets and others have not, leading to lots of frustration.
 
-#### Change the menu
+### Change the menu
 
 In order to avoid mixing content files with config & dev files, pages are never created at the root: they all get written in collections. In order to add a page to the menu, you can simply add it to `_toplevel`, as long as you set its URL with `permalink`. Prefix their filename with the index at which you'd like them to appear in the menu. The first one (by convention, index `0`) will appear on the left handside of the menu, along with your website logo.
 
 
-## Publish to GitHub Pages
+### Publish to GitHub Pages
 
 - Create a repository on GitHub.
 - Push your content to it.
