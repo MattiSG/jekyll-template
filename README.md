@@ -171,13 +171,6 @@ We'll use [CircleCI](https://circleci.com). They offer a free plan for open-sour
 Just log in with GitHub and activate builds for your repository.
 
 
-## Edit content
-
-### Markdown
-
-- [Syntax reference](https://www.markdownguide.org/basic-syntax).
-- [Tutoriel en français](https://openclassrooms.com/fr/courses/1304236-redigez-en-markdown).
-- [Cheat sheet](https://devhints.io/jekyll).
 
 
 # License
