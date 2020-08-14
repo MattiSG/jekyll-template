@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-       - image: circleci/ruby:2.5.3-browsers  # use the browsers variant image to have Java preinstalled as it is a dependency of html5validator
+       - image: circleci/ruby:2.7.1-browsers  # use the browsers variant image to have Java preinstalled as it is a dependency of html5validator
 
     steps:
       - checkout
