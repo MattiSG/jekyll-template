@@ -10,7 +10,7 @@ begin
   # Make sure we build locally with the same version than Github Pages does.
   gem 'github-pages', versions['github-pages'], group: :jekyll_plugins
 
-  # Prevent CircleCI to push to Github if the Ruby version is not the GitHub Pages one.
+  # Prevent CI to push to Github if the Ruby version is not the GitHub Pages one.
   # See <https://circleci.com/docs/unrecognized-ruby-version/>
   ruby versions['ruby'] if ENV['CI']
 
