@@ -102,6 +102,13 @@ Most Jekyll themes don’t provide the [meta tags for “social cards”](https:
 The `_includes/metadata.html` in this repository ships the minimal amount of code to enable rich preview on Facebook, Twitter, LinkedIn and any other [OpenGraph](https://ogp.me)-compatible scraper.
 
 
+### Custom builds and non-“safe” plugins on GitHub Pages
+
+GitHub Pages provides free and fast deployment, but relying on GitHub-provided Jekyll compilation adds limitations to how much you can customise the process.
+
+The `_scripts/deploy.sh` script in this repository, combined with the pre-filled CI config file, enables CI compilation and deployment of your Jekyll website as a pure HTML dump on GitHub Pages, allowing you to benefit from GitHub’s hosting without relying on their more constrained Jekyll engine.
+
+
 ## Tips
 
 ### Compress assets

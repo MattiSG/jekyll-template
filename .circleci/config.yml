@@ -66,3 +66,52 @@ jobs:
             while ! curl --silent http://localhost:4000
             do sleep 1
             done
+
+# Uncomment the lines below if you want to deploy to GitHub Pages only after compiling in CI.
+# Delete these commented lines if you want to always deploy when merging on `master`, no matter what if CI succeeds or not.
+#
+#   deploy:
+#     docker:
+#        - image: circleci/ruby:2.7.1-browsers  # use the same docker image used for testing
+#
+#     steps:
+#       - checkout
+#       - restore_cache:
+#           key: dependency-cache-{{ checksum "Gemfile.lock" }}
+#
+#       - run:
+#           name: Restore bundle cache
+#           command: bundle config set path vendor/bundle
+#
+#       - run:
+#           name: Update bundler
+#           command: gem install bundle
+#
+#       - run:
+#           name: Install Ruby dependencies
+#           command: bundle install --jobs=4 --retry=3
+#
+#       - save_cache:
+#           key: dependency-cache-{{ checksum "Gemfile.lock" }}
+#           paths:
+#             - ./vendor/bundle
+#
+#       - run:
+#           name: Compile website
+#           command: bundle exec jekyll build
+#
+#       - run:
+#           name: Deploy site to GitHub Pages
+#           command: bash _scripts/deploy.sh
+#
+# workflows:
+#   version: 2
+#   build-and-deploy:
+#     jobs:
+#       - build
+#       - deploy:
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: master
