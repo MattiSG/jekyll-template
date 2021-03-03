@@ -1,7 +1,11 @@
-# Jekyll files
+# Build artifacts
 _site
 .sass-cache
 .jekyll-metadata
 
-# OS-specific files
+# Dependencies
+.bundle
+vendor
+
+# OS-specific
 .DS_Store
