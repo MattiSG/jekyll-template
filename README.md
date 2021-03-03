@@ -118,7 +118,7 @@ Creating a new file is significantly harder than editing existing ones in the on
 For example, the GitHub online editor will use `filename` and `value` as URL-encoded values for the file name and file content, so we can craft URLs that will pre-fill a new file, complete with YAML front-matter:
 
 ```
-https://github.com/$username/${repo_name}/new/${branch}/${containing_folder_path}?filename=${new_file_name_with_extension}&value=${url_encoded_template}
+https://github.com/${username}/${repo_name}/new/${branch}/${containing_folder_path}?filename=${new_file_name_with_extension}&value=${url_encoded_template}
 ```
 
 I usually store these links in the `CONTRIBUTING` file.
