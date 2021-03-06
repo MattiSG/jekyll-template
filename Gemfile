@@ -11,8 +11,8 @@ begin
   # Ensure matching of the local gems with the production version of Github Pages.
   gem 'github-pages', versions['github-pages'], group: :jekyll_plugins
 
-  ruby versions['ruby'] if ENV['CI']
   # Ensure matching of the local Ruby version with the production version of GitHub Pages.
+  ruby versions['ruby']
 
 # If the GitHub Pages versions endpoint is unreacheable, assume offline development.
 rescue SocketError => socket_error
