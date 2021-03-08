@@ -16,7 +16,7 @@ jobs:
 
       - run:
           name: Update bundler
-          command: gem install bundle
+          command: gem install bundler  # Maintenance mode instructions: lock down this version with the suffix `-v X.Y.Z`. The version number should be the one in `tail -2 Gemfile.lock`.
 
       - run:
           name: Install Ruby dependencies
@@ -85,7 +85,7 @@ jobs:
 #
 #       - run:
 #           name: Update bundler
-#           command: gem install bundle
+#           command: gem install bundler  # Maintenance mode instructions: lock down this version with the suffix `-v X.Y.Z`. The version number should be the one in `tail -2 Gemfile.lock`.
 #
 #       - run:
 #           name: Install Ruby dependencies

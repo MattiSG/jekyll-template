@@ -9,10 +9,10 @@ begin
   versions     = JSON.parse(Net::HTTP.get(URI(versions_url)))
 
   # Ensure matching of the local gems with the production version of Github Pages.
-  gem 'github-pages', versions['github-pages'], group: :jekyll_plugins
+  gem 'github-pages', versions['github-pages'], group: :jekyll_plugins  # Maintenance mode instructions: lock down the version by replacing “versions['github-pages']” with '~> X.Y.Z'. The version number should be the one in `grep github-pages Gemfile.lock`.
 
   # Ensure matching of the local Ruby version with the production version of GitHub Pages.
-  ruby versions['ruby']
+  ruby versions['ruby']  # Maintenance mode instructions: remove this check entirely, as it is already locked in the CI image
 
 # If the GitHub Pages versions endpoint is unreacheable, assume offline development.
 rescue SocketError => socket_error

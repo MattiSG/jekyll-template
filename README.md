@@ -61,6 +61,14 @@ In CI, the `.circleci/config.yml` in this repository builds using the same versi
 > The Jekyll documentation provides a [template for CircleCI](https://jekyllrb.com/docs/continuous-integration/circleci/), but it assumes a deployment to Amazon S3 where you control production versions.
 
 
+### Maintenance mode
+
+If you need to keep building the website without technical interventions, such as for example if some collaborators edit content without having the ability to change the code and there is no more technical support available long term, a failing CI can become an issue.
+
+In that case, you could disable CI entirely. However, this means you would lose content validation, which would still bring value to non-tech collaborators. Hence, the recommended step is to disable version check in CI, leaving it to technical collaborators to ensure synchronisation when they intervene on the code.
+
+In order to lock down dependencies and maximise the time without which a technical intervention is necessary, you should lock down all dependencies versions, remove runtime version checks in CI, and switch to building in CI rather than relying on GitHub Pages updates, as these updates can be incompatible with your specific developments. The specific way of locking down dependencies is all documented in comments starting with “Maintenance mode instructions”.
+
 ### Advanced features discoverability
 
 Some of the lesser-known yet very powerful features of Jekyll are [collections](https://jekyllrb.com/docs/step-by-step/09-collections/) and [includes](https://jekyllrb.com/docs/step-by-step/05-includes/). The default Jekyll template, by staying minimal, does not help with making those discoverable.
