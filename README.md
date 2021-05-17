@@ -180,12 +180,9 @@ In order to avoid mixing content files with config & dev files, pages are never 
 - Activate GitHub Pages in the settings.
 
 
-## Set up Continuous Integration
+### Set up Continuous Integration
 
-We'll use [CircleCI](https://circleci.com). They offer a free plan for open-source.
-Just log in with GitHub and activate builds for your repository.
-
-
+If you use [CircleCI](https://circleci.com), just log in with GitHub and activate builds for your repository. They offer a free plan for open-source.
 
 
 # License
