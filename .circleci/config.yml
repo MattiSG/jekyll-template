@@ -26,7 +26,7 @@ jobs:
           name: Install html5validator
           command: |
             sudo apt-get update
-            sudo apt-get install -y python-pip
+            sudo apt-get install -y python3-pip
             pip install --user --upgrade html5validator  # will install in $HOME/.local
 
       - save_cache:
