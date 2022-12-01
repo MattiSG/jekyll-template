@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-       - image: cimg/ruby:2.7.3-browsers  # use the browsers variant image to have Java preinstalled as it is a dependency of html5validator
+       - image: cimg/ruby:2.7.4-browsers  # use the browsers variant image to have Java preinstalled as it is a dependency of html5validator
 
     steps:
       - checkout
@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: Check HTML common mistakes
-          command: bundle exec htmlproofer ./_site --assume-extension .html --check-sri --disable-external --ignore-empty-alt --swap-urls '^/jekyll-template:../_site'
+          command: bundle exec htmlproofer ./_site --assume-extension .html --check-sri true --disable-external true --ignore-empty-alt true --swap-urls '^/jekyll-template:../_site'
 
       - run:
           name: Validate HTML spec compliance
@@ -68,11 +68,11 @@ jobs:
             done
 
 # Uncomment the lines below if you want to deploy to GitHub Pages only after compiling in CI.
-# Delete these commented lines if you want to always deploy when merging on `master`, no matter what if CI succeeds or not.
+# Delete these commented lines if you want to always deploy when merging on `main`, no matter what if CI succeeds or not.
 #
 #   deploy:
 #     docker:
-#        - image: cimg/ruby:2.7.3-browsers  # use the same docker image used for testing
+#        - image: cimg/ruby:2.7.4-browsers  # use the same docker image used for testing
 #
 #     steps:
 #       - checkout
@@ -114,4 +114,4 @@ jobs:
 #             - build
 #           filters:
 #             branches:
-#               only: master
+#               only: main
