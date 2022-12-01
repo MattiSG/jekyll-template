@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: Check HTML common mistakes
-          command: bundle exec htmlproofer ./_site --assume-extension .html --check-sri --disable-external --ignore-empty-alt --swap-urls '^/jekyll-template:../_site'
+          command: bundle exec htmlproofer ./_site --assume-extension .html --check-sri true --disable-external true --ignore-empty-alt true --swap-urls '^/jekyll-template:../_site'
 
       - run:
           name: Validate HTML spec compliance

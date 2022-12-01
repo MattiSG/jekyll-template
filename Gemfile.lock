@@ -86,7 +86,7 @@ GEM
     html-pipeline (2.14.2)
       activesupport (>= 2)
       nokogiri (>= 1.4)
-    html-proofer (4.2.0)
+    html-proofer (4.4.3)
       addressable (~> 2.3)
       mercenary (~> 0.3)
       nokogiri (~> 1.13)
@@ -270,7 +270,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 227)
-  html-proofer (= 4.2.0)
+  html-proofer (>= 4.4, < 5)
 
 RUBY VERSION
    ruby 2.7.4p191

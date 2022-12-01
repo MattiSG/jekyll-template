@@ -41,5 +41,5 @@ rescue => standard_error
 end
 
 group :test do
-  gem 'html-proofer', "4.2.0"  # v5 depends on Ruby v3, which is not supported by GitHub Pages
+  gem 'html-proofer', ">= 4.4",  "< 5"  # v5 depends on Ruby v3, which is not supported by GitHub Pages
 end
