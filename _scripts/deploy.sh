@@ -20,7 +20,7 @@ mv $COMPILED_SITE_PATH/* .
 rm -R $COMPILED_SITE_PATH
 
 git add -fA
-git commit --allow-empty -m "$(git log master -1 --pretty=%B)"
+git commit --allow-empty -m "$(git log main -1 --pretty=%B)"
 git push "https://${COMMITTER_GITHUB_ID}@github.com/${USER_NAME}/${REPO_NAME}.git" gh-pages
 
 echo "Deployed successfully"

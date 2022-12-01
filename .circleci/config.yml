@@ -68,7 +68,7 @@ jobs:
             done
 
 # Uncomment the lines below if you want to deploy to GitHub Pages only after compiling in CI.
-# Delete these commented lines if you want to always deploy when merging on `master`, no matter what if CI succeeds or not.
+# Delete these commented lines if you want to always deploy when merging on `main`, no matter what if CI succeeds or not.
 #
 #   deploy:
 #     docker:
@@ -114,4 +114,4 @@ jobs:
 #             - build
 #           filters:
 #             branches:
-#               only: master
+#               only: main
